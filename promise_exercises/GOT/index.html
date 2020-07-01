@@ -9,9 +9,14 @@
     
 
     <script>
-        const chars = response => response.json();
+        <ul id="namesList"></ul>
 
-        "https://www.anapioficeandfire.com/api/characters"
+        let names = document.getElementById("namesList")
+
+        fetch("https://www.anapioficeandfire.com/api/characters")
+        .then(resp=>resp.json())
+
+        
 
 
 
