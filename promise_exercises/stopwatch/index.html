@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">Start</button>
+
+    <script>
+        onClick = 0;
+        const stopwatch = () => {
+            return new Promise((resolve,reject)=>{
+                onClick += 1;
+                let num = Math.floor(Math.random()*10);
+                let myClick = onClick;
+                setTimeout(()=>{
+                    resolve([`${num} secs`, myClick])
+                },num*1000)
+            })
+        }
+        document.getElementById("start")
+        .addEventListener("click", ()=>{
+            stopwatch().then(resp=>console.log(resp))
+        })
+
+    </script>
+</body>
+</html>

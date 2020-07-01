@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const myFunction = (json) =>{
+            console.log("Now I can contine with my program")
+            console.log(json)
+            
+            return "This is really strange"
+        }
+
+
+        //this is how we use fetch - my function means we can use that json obj.
+        fetch("https://swapi.dev/api/")
+        .then(resp=>resp.json())
+        .then(json=>myFunction(json))
+        .then(results=>console.log(results))
+        .then(another=>"testing here")
+        .then(again=>console.log(again))
+        .catch(err=>console.log(err))
+        
+
+    </script>
+</body>
+</html>

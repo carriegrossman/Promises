@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //when creating a promise the function inside has the 2 arguments 
+        //resolve and reject that are two functions in themselves
+        // let myPromise = new Promise((resolve, reject)=>{
+        //     resolve("We are good to go")
+        // })
+
+        // myPromise.then(res=>console.log(res))
+        
+        let number = 0;
+        let myPromise = new Promise((resolve, reject)=>{
+            if(number > 0){
+                resolve("This is a good number")
+            } else{
+                reject("This is a bad number")
+            }
+        })
+
+            myPromise
+            .then(resolved=>console.log(resolved))
+            .catch(rejected=>console.log(rejected))
+            .then(()=>console.log(`and the number is ${number}`))
+
+
+
+
+    </script>
+</body>
+</html>
